@@ -1,4 +1,4 @@
-name: .NET Core
+name: Build & Test
 
 on:
   push:
@@ -28,8 +28,8 @@ jobs:
 #           #owner: # optional
 #           # Optional NuGet.config location, if your NuGet.config isn't located in the root of the repo.
 #           #config-file: # optional
-      - name: Add msbuild to PATH
-        uses: microsoft/setup-msbuild@v1.0.2
+#       - name: Add msbuild to PATH
+#         uses: microsoft/setup-msbuild@v1.0.2
       - name: Nuget Restore
         run: |
           nuget restore
