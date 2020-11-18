@@ -30,7 +30,10 @@ jobs:
 #           #config-file: # optional
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
+      - name: Nuget Restore
+        run: |
+          nuget restore
       - name: MSBuild
         run: |
-          Get-Location
+          Get-Location | Out-String | Write-Host          
           msbuild /t:Rebuild /p:Configuration=Release /bl Test.sln
