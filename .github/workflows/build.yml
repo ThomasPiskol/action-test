@@ -37,6 +37,7 @@ jobs:
     - name: Store SemVer
       id: gitversion
       run: |
+        gci env:* | sort Name | Format-Table -AutoSize | Out-String -Width 900
         Write-Host "::set-output name=semver::$($env:GitVersion_SemVer)"
 
     - name: Test
