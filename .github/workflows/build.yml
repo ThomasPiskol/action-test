@@ -59,7 +59,7 @@ jobs:
       with:
         tag_name: v${{ steps.gitversion.outputs.semver }}
         name: ${{ steps.gitversion.outputs.semver }}
-        target_commitish: github.sha
+        target_commitish: ${{github.sha}}
         draft: true
         prerelease: false
         body: |
