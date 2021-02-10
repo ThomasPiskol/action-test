@@ -55,7 +55,7 @@ jobs:
 
     - name: Release
       if: github.ref == 'refs/heads/master'
-      uses: ThomasPiskol/action-gh-release@93da15deb5548ec0f08f2d22cdfdea289f3d2510
+      uses: ThomasPiskol/action-gh-release@60ec4e5f6b1e1c9b3753f479e6a771951b699e3b
       with:
         tag_name: v${{ steps.gitversion.outputs.semver }}
         name: ${{ steps.gitversion.outputs.semver }}
