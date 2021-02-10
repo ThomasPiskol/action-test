@@ -55,7 +55,7 @@ jobs:
 
     - name: Release
       if: github.ref == 'refs/heads/master'
-      uses: ThomasPiskol/action-gh-release@ff30f8edb18fa851785a2d361b03c9713f5ac17d
+      uses: ThomasPiskol/action-gh-release@8eb01d050288728124e879e2e724873f39433141
       with:
         tag_name: v${{ steps.gitversion.outputs.semver }}
         name: ${{ steps.gitversion.outputs.semver }}
@@ -63,7 +63,7 @@ jobs:
         draft: true
         prerelease: false
         body: |
-          ${{ github.event.head_commit.message }}
+          test
         files: |
           nuget/**
       env:
