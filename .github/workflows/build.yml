@@ -30,7 +30,7 @@ jobs:
       run: dotnet restore 
     
     - name: Build
-      run: dotnet build --no-restore --configuration Release
+      run: dotnet build --no-restore --configuration Release --verbosity detailed
     
     # Make SemVer from GitVersion available as GitHub Action
     # variable.
@@ -41,7 +41,7 @@ jobs:
         Write-Host "::set-output name=semver::$($env:GitVersion_SemVer)"
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal --configuration Release --verbosity detailed
+      run: dotnet test --no-build --verbosity normal --configuration Release
     
     - name: NuGet
       run: dotnet pack --no-restore --configuration Release
