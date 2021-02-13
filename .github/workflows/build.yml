@@ -41,7 +41,7 @@ jobs:
         Write-Host "::set-output name=semver::$($env:GitVersion_SemVer)"
 
     - name: Test
-      run: dotnet test --no-build --verbosity normal --configuration Release
+      run: dotnet test --no-build --verbosity normal --configuration Release --verbosity detailed
     
     - name: NuGet
       run: dotnet pack --no-restore --configuration Release
